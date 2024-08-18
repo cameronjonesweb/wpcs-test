@@ -9,26 +9,10 @@ jobs:
       steps:
         - uses: actions/checkout@v2
 
-        - name: WPCS Check (5.6)
+        - name: WPCS Check
           uses: 10up/wpcs-action@stable
           with:
             excludes: 'Tests'
             enable_warnings: true
-            extra_args: '--runtime-set testVersion 5.6'
-          if: always()
-
-        - name: WPCS Check (7.4)
-          uses: 10up/wpcs-action@stable
-          with:
-            excludes: 'Tests'
-            enable_warnings: true
-            extra_args: '--runtime-set testVersion 7.4'
-          if: always()
-
-        - name: WPCS Check (8.3)
-          uses: 10up/wpcs-action@stable
-          with:
-            excludes: 'Tests'
-            enable_warnings: true
-            extra_args: '--runtime-set testVersion 8.3'
+            use_local_config: 'true'
           if: always()
