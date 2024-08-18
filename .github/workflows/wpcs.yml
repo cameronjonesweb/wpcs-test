@@ -15,4 +15,9 @@ jobs:
             enable_warnings: true
             use_local_config: 'true'
 
+        - name: PHP compat
+          uses: pantheon-systems/phpcompatibility-action@v1
+          with:
+            test-versions: 5.6-
+
 
