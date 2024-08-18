@@ -14,7 +14,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: [ '5.6', '7.4', '8.3' ]
+        php-versions: [ '5.6', '7.4', '8.3' ]
         tools: composer:v2, cs2pr
 
     - name: Check PHP Version
