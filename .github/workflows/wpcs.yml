@@ -2,13 +2,12 @@ name: WordPress Coding Standards Checks
 
 on: push
 
-strategy:
-  matrix:
-    php-versions: ['5.6', '7.4', '8.3']
-
 jobs:
   run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['5.6', '7.4', '8.3']
     name: PHP Coding Standards
 
     steps:
