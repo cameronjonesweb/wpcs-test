@@ -12,5 +12,11 @@
             "name": "Cameron Jones",
             "email": "cameron@cameronjonesweb.com.au"
         }
-    ]
+    ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }
