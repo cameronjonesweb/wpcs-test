@@ -2,6 +2,10 @@ name: WordPress Coding Standards Checks
 
 on: push
 
+strategy:
+  matrix:
+    php-versions: ['5.6', '7.4', '8.3']
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -14,7 +18,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-versions: [ '5.6', '7.4', '8.3' ]
+        php-version: ${{ matrix.php-versions }}
         tools: composer:v2, cs2pr
 
     - name: Check PHP Version
