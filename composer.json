@@ -1,0 +1,16 @@
+{
+    "name": "cameronjonesweb/wpcs-test",
+    "description": "WPCS Test",
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "wp-coding-standards/wpcs": "^3.0",
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cameron Jones",
+            "email": "cameron@cameronjonesweb.com.au"
+        }
+    ]
+}
