@@ -1,30 +1,12 @@
-name: WordPress Coding Standards Checks
+name: WPCS check
 
-on: push
+on: pull_request
 
 jobs:
-  run:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php-versions: ['5.6', '7.4', '8.3']
-    name: PHP Coding Standards
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ matrix.php-versions }}
-        tools: composer:v2, cs2pr
-
-    - name: Check PHP Version
-      run: php -v
-
-    - name: Composer install
-      run: composer install --optimize-autoloader --prefer-dist
-
-    - name: Coding Sniffs.
-      run: ./vendor/bin/phpcs --report-full --report-checkstyle=${{ runner.temp }}/phpcs-report.xml --extensions=php --standard=WordPress .
+  phpcs:
+      name: WPCS
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: WPCS check
+          uses: 10up/wpcs-action@stable
